@@ -18,5 +18,4 @@ before(async () => {
 // drop collections
 beforeEach(async () => {
     const isDropped = await mongoose.connection.collections.users.drop();
-    assert(isDropped);
 });
