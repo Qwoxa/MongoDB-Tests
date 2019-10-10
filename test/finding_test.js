@@ -6,7 +6,7 @@ describe('finding records', () => {
 
     beforeEach(async () => {
         user = new User({ name: 'Qwe' });
-        const createdUser = await user.save();
+        await user.save();
     });
 
     it('finds a user in the db', async () => {
