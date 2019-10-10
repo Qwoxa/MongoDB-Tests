@@ -15,11 +15,11 @@ describe('Nesting blocks', () => {
         assert(user.name === 'Nick');
     });
 
-    it('adds a number to the user', async () => {
-        const number = { number: 998, note: 'new number' };
-        const result = await phones.push(number);
-        console.log(result);
-        assert(true);
-    });
+    // it('adds a number to the user', async () => {
+    //     const number = { number: 998, note: 'new number' };
+    //     const result = await phones.push(number);
+    //     console.log(result);
+    //     assert(true);
+    // });
 
 });
