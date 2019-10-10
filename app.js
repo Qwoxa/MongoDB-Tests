@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const Phone = require('./models/phone').model;
 
 (async function connectDatabase() {
     try {
@@ -11,10 +12,3 @@ const User = require('./models/user');
     }
 })();
 
-
-
-User
-.updateMany({  }, { $rename: { fname: 'qwe' } } )
-.then(docs => {
-    console.log(docs);
-});

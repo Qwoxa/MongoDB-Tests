@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const phoneSchema = require('./phone').schema;
 
 const userSchema = new Schema({
     name: String,
-    surname: String,
     age: Number,
-    bio: String,
+    phones:[phoneSchema],
     registrationDate: {
         type: Date,
         default: Date.now()
