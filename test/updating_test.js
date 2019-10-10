@@ -5,15 +5,19 @@ describe('updating records', () => {
     let user = null;
 
     beforeEach(async () => {
-        user = new User({ name: 'Qwe' });
+        user = new User({ name: 'Qwe', age: 20 });
         await user.save();
     });
 
     it('updated the user in the db', async () => {
         const props = { name: 'John' };
-        await User.updateOne({ name: user.name }, { $set: props });
-        const person = await User.findById(user._id);
-        assert(person.name === props.name);
+        const result = await User.updateOne({ name: user.name }, { $set: props });
+        assert(result.nModified === 1);
+    });
+
+    it('increments the user\'s age', async () => {
+        const result = await User.updateOne({ _id: user._id }, { $inc: { age: 1 } });
+        assert(result.nModified === 1);
     });
 
 });

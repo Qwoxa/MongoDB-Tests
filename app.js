@@ -12,8 +12,9 @@ const User = require('./models/user');
 })();
 
 
+
 User
-.findOne({ bio: /(hate|love)/i }, '-__v -name -registrationDate')
+.updateMany({  }, { $rename: { fname: 'qwe' } } )
 .then(docs => {
     console.log(docs);
 });

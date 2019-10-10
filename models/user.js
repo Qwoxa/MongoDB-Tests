@@ -5,6 +5,7 @@ const userSchema = new Schema({
     name: String,
     surname: String,
     age: Number,
+    bio: String,
     registrationDate: {
         type: Date,
         default: Date.now()
