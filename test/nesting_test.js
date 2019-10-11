@@ -1,6 +1,6 @@
 const assert = require('assert');
 const mongoose = require('mongoose');
-const User = require('../models/user');
+const User = require('../models/User');
 
 
 describe('Nesting blocks', () => {

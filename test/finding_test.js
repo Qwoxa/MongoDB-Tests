@@ -1,5 +1,5 @@
 const assert = require('assert');
-const User = require('../models/user');
+const User = require('../models/User');
 
 describe('finding records', () => {
     let user = null;
