@@ -5,17 +5,17 @@ describe('finding records', () => {
     let user = null;
 
     beforeEach(async () => {
-        user = new User({ name: 'Qwe' });
+        user = new User({ name: 'Test_name' });
         await user.save();
     });
 
     it('finds a user in the db', async () => {
-        const result = await User.findOne({ name: user.name });
-        assert(result.name === user.name);
+        const foundUser = await User.findOne({ _id: user._id });
+        assert(foundUser.equals(user));
     });
 
     it('finds a user by ID in the db', async () => {
-        const result = await User.findById(user._id);
-        assert(String(result._id) === String(user._id));
+        const foundUser = await User.findById(user._id);
+        assert(foundUser.equals(user));
     });
 });

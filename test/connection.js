@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const assert = require('assert');
 
 before(async () => {
     // Connect to mongo
@@ -15,8 +14,9 @@ before(async () => {
     }    
 });
 
-// drop collections
+// drop user collection if exists
 beforeEach(async () => {
-    const isDropped = await mongoose.connection.collections.users.drop();
-    assert(isDropped);
+    if (!mongoose.connection.collections.users) {
+        await mongoose.connection.collections.users.drop();
+    }
 });

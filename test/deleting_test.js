@@ -10,8 +10,7 @@ describe('deleting records', () => {
     });
 
     it('removes a user from the db', async () => {
-        const result = await user.remove();
-        console.log(result);
-        assert(result.name === user.name);
+        const deletedUser = await user.remove();
+        assert(deletedUser.$isDeleted());
     });
 });

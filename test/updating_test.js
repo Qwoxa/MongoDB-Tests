@@ -1,16 +1,15 @@
 const assert = require('assert');
-const User = require('../models/user');
+const User = require('../models/User');
 
 describe('updating records', () => {
     let user = null;
 
     beforeEach(async () => {
-        user = new User({ name: 'Qwe', age: 20 });
-        await user.save();
+        user = await new User({ name: 'Test_name', age: 20 }).save();
     });
 
     it('updated the user in the db', async () => {
-        const props = { name: 'John' };
+        const props = { name: 'Test_name_#2' };
         const result = await User.updateOne({ name: user.name }, { $set: props });
         assert(result.nModified === 1);
     });

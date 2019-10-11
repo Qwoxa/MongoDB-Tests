@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('./models/User');
-const Phone = require('./models/Phone').model;
+
 
 (async function connectDatabase() {
     try {
@@ -12,3 +11,4 @@ const Phone = require('./models/Phone').model;
     }
 })();
 
+// Application here
